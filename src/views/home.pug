@@ -1,0 +1,8 @@
+doctype html
+html
+    head
+        title #{pageTitle}
+    body
+        form(action="/read", method="post", enctype="multipart/form-data")
+            input(type="file", name="text", accept="text/plain")
+            input(type="submit", value="Convert!")
