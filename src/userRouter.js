@@ -1,8 +1,12 @@
 import express from "express";
-import { homeController } from "./controller";
+import { getHome, postHome } from "./controller";
+import multer from "multer";
 
 const userRouter = express.Router();
+const upload = multer({ dest: "upload/" });
 
-userRouter.get("/", homeController);
+userRouter.get("/", getHome);
+
+userRouter.post("/read", upload.single("userText"), postHome);
 
 export default userRouter;
